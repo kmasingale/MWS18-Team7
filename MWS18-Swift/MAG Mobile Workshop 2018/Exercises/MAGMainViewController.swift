@@ -8,6 +8,7 @@
 
 import UIKit
 import Material
+import MASFoundation
 
 class MAGMainViewController: MAGBaseViewController {
     
@@ -25,6 +26,18 @@ class MAGMainViewController: MAGBaseViewController {
         //
         //  As this is main root view controller, you can place any code that needs to be executed once
         //
+        
+        //Start MAS
+        MAS.setGrantFlow(MASGrantFlow.password)
+        MAS.start(withDefaultConfiguration: true) { (completed, error) in
+            print ("...Starting MAS!")
+            if (completed == true) {
+                print ("MAS start completed!")
+            } else {
+                print ("MAS   NOT   STARTED.  Errors: ")
+                print (error!)
+            }
+        }
     }
 }
 

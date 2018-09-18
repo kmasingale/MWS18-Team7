@@ -32,20 +32,20 @@ class MAGExercise1ViewController: MAGBaseViewController {
         
         title = "Exercise 1"
         
-        //Start MAS
-        MAS.setGrantFlow(MASGrantFlow.password)
-        MAS.start(withDefaultConfiguration: true) { (completed, error) in
-            SVProgressHUD.show(withStatus: "Starting MAS")
-            print ("...Starting MAS!")
-            if (completed == true) {
-                SVProgressHUD.dismiss()
-                print ("MAS start completed!")
-            } else {
-                SVProgressHUD.dismiss()
-                print ("MAS   NOT   STARTED.  Errors: ")
-                print (error!)
-            }
-        }
+//        //Start MAS
+//        MAS.setGrantFlow(MASGrantFlow.password)
+//        MAS.start(withDefaultConfiguration: true) { (completed, error) in
+//            SVProgressHUD.show(withStatus: "Starting MAS")
+//            print ("...Starting MAS!")
+//            if (completed == true) {
+//                SVProgressHUD.dismiss()
+//                print ("MAS start completed!")
+//            } else {
+//                SVProgressHUD.dismiss()
+//                print ("MAS   NOT   STARTED.  Errors: ")
+//                print (error!)
+//            }
+//        }
     }
     
     
