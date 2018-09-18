@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MAGExercise3ViewController" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+            <connections>
+                <outlet property="resultTextView" destination="39p-Jj-gII" id="EkZ-U5-O0Q"/>
+                <outlet property="urlTextField" destination="QvI-F8-qnE" id="DCK-5Q-KD4"/>
+                <outlet property="view" destination="sbh-9g-8AJ" id="5YQ-Up-rbA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="sbh-9g-8AJ">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6v-RZ-CtF" customClass="MAGButton" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="139" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="UAK-Ew-gsy"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="WAc-en-LnJ"/>
+                    </constraints>
+                    <state key="normal" title="Invoke API"/>
+                    <connections>
+                        <action selector="performInvokeAPIWithSender:" destination="-1" eventType="touchUpInside" id="Ekj-sM-Tmk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2l-DY-02R" customClass="MAGButton" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="195" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="1fD-jW-Sp2"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="KLb-NE-04a"/>
+                    </constraints>
+                    <state key="normal" title="Logout"/>
+                    <connections>
+                        <action selector="performLogoutWithSender:" destination="-1" eventType="touchUpInside" id="HSe-gr-vxA"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="39p-Jj-gII" customClass="MAGTextView" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="262" width="323" height="315"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QvI-F8-qnE" customClass="MAGTextField" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="70" width="323" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="uju-MJ-fc6"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Nn-2a-t1y" customClass="MAGButton" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="603" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="gt3-mC-7pv"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="ssT-7m-qsI"/>
+                    </constraints>
+                    <state key="normal" title="Clear All Values"/>
+                    <connections>
+                        <action selector="clearAllValuesWithSender:" destination="-1" eventType="touchUpInside" id="fzB-wZ-KU5"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#3: Protect API w/ OAuth &amp; Mutual SSL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZd-rp-oAj">
+                    <rect key="frame" x="26" y="30" width="323" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="g2l-DY-02R" firstAttribute="top" secondItem="G6v-RZ-CtF" secondAttribute="bottom" constant="18" id="4el-22-I20"/>
+                <constraint firstItem="dMD-3C-4rm" firstAttribute="trailing" secondItem="lZd-rp-oAj" secondAttribute="trailing" constant="26" id="6JU-LG-jNF"/>
+                <constraint firstItem="g2l-DY-02R" firstAttribute="leading" secondItem="dMD-3C-4rm" secondAttribute="leading" constant="26" id="7fa-Y4-X6a"/>
+                <constraint firstItem="39p-Jj-gII" firstAttribute="top" secondItem="g2l-DY-02R" secondAttribute="bottom" constant="29" id="9eg-xY-L1o"/>
+                <constraint firstItem="G6v-RZ-CtF" firstAttribute="leading" secondItem="dMD-3C-4rm" secondAttribute="leading" constant="26" id="Chz-99-gpu"/>
+                <constraint firstItem="dMD-3C-4rm" firstAttribute="bottom" secondItem="5Nn-2a-t1y" secondAttribute="bottom" constant="26" id="FED-QA-dCH"/>
+                <constraint firstItem="39p-Jj-gII" firstAttribute="leading" secondItem="dMD-3C-4rm" secondAttribute="leading" constant="26" id="FHT-dD-s1r"/>
+                <constraint firstItem="dMD-3C-4rm" firstAttribute="trailing" secondItem="g2l-DY-02R" secondAttribute="trailing" constant="26" id="HUA-jA-6JY"/>
+                <constraint firstItem="5Nn-2a-t1y" firstAttribute="top" secondItem="39p-Jj-gII" secondAttribute="bottom" constant="26" id="HgB-uX-n8s"/>
+                <constraint firstItem="QvI-F8-qnE" firstAttribute="leading" secondItem="dMD-3C-4rm" secondAttribute="leading" constant="26" id="I8T-Y1-173"/>
+                <constraint firstItem="5Nn-2a-t1y" firstAttribute="leading" secondItem="dMD-3C-4rm" secondAttribute="leading" constant="26" id="IAn-eK-QbW"/>
+                <constraint firstItem="dMD-3C-4rm" firstAttribute="trailing" secondItem="QvI-F8-qnE" secondAttribute="trailing" constant="26" id="ZTS-mU-FNr"/>
+                <constraint firstItem="dMD-3C-4rm" firstAttribute="trailing" secondItem="5Nn-2a-t1y" secondAttribute="trailing" constant="26" id="bYQ-xT-VZ4"/>
+                <constraint firstItem="G6v-RZ-CtF" firstAttribute="top" secondItem="QvI-F8-qnE" secondAttribute="bottom" constant="28" id="dfT-cn-dUB"/>
+                <constraint firstItem="lZd-rp-oAj" firstAttribute="leading" secondItem="dMD-3C-4rm" secondAttribute="leading" constant="26" id="fDB-Ba-5j3"/>
+                <constraint firstItem="lZd-rp-oAj" firstAttribute="top" secondItem="dMD-3C-4rm" secondAttribute="top" constant="10" id="fuC-nB-ErP"/>
+                <constraint firstItem="QvI-F8-qnE" firstAttribute="top" secondItem="dMD-3C-4rm" secondAttribute="top" constant="50" id="of9-OF-NxA"/>
+                <constraint firstItem="dMD-3C-4rm" firstAttribute="trailing" secondItem="G6v-RZ-CtF" secondAttribute="trailing" constant="26" id="sNL-LT-9Bx"/>
+                <constraint firstItem="dMD-3C-4rm" firstAttribute="trailing" secondItem="39p-Jj-gII" secondAttribute="trailing" constant="26" id="xDF-9P-HOy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="dMD-3C-4rm"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

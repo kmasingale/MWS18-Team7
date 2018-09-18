@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MAGExercise8ViewController">
+            <connections>
+                <outlet property="resultTextView" destination="LHj-87-n1y" id="U57-3Q-J7h"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#8: Proximity Login with QR Code Scanning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omk-Hc-69T">
+                    <rect key="frame" x="26" y="30" width="323" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHr-6b-gGb" customClass="MAGButton" customModule="MW2018" customModuleProvider="target">
+                    <rect key="frame" x="54" y="138" width="267" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="XTH-6G-MFU"/>
+                    </constraints>
+                    <state key="normal" title="QR Code Scan"/>
+                    <connections>
+                        <action selector="performQRCodeScanWithSender:" destination="-1" eventType="touchUpInside" id="SEq-x8-0o0"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LHj-87-n1y" customClass="MAGTextView" customModule="MW2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="224" width="323" height="353"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7d-6j-0WK" customClass="MAGButton" customModule="MW2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="603" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="5gc-5c-wDZ"/>
+                        <constraint firstAttribute="height" constant="38" id="irm-je-sd1"/>
+                    </constraints>
+                    <state key="normal" title="Clear All Values"/>
+                    <connections>
+                        <action selector="clearAllValuesWithSender:" destination="-1" eventType="touchUpInside" id="hl6-qp-OcN"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="p7d-6j-0WK" secondAttribute="bottom" constant="26" id="7LO-cr-vGL"/>
+                <constraint firstItem="QHr-6b-gGb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="54" id="92f-4h-a47"/>
+                <constraint firstItem="p7d-6j-0WK" firstAttribute="top" secondItem="LHj-87-n1y" secondAttribute="bottom" constant="26" id="BHG-Sf-ilT"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="omk-Hc-69T" secondAttribute="trailing" constant="26" id="Jhz-N8-jWQ"/>
+                <constraint firstItem="omk-Hc-69T" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="26" id="NUC-GQ-j1A"/>
+                <constraint firstItem="QHr-6b-gGb" firstAttribute="top" secondItem="omk-Hc-69T" secondAttribute="bottom" constant="87" id="W28-Ko-a8J"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="p7d-6j-0WK" secondAttribute="trailing" constant="26" id="cgd-Nj-eDY"/>
+                <constraint firstItem="omk-Hc-69T" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="gSw-YZ-MvQ"/>
+                <constraint firstItem="p7d-6j-0WK" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="26" id="hu9-eC-Tux"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="QHr-6b-gGb" secondAttribute="trailing" constant="54" id="i3A-TA-meb"/>
+                <constraint firstItem="LHj-87-n1y" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="26" id="vaZ-k4-c7N"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="LHj-87-n1y" secondAttribute="trailing" constant="26" id="yjz-he-69n"/>
+                <constraint firstItem="LHj-87-n1y" firstAttribute="top" secondItem="QHr-6b-gGb" secondAttribute="bottom" constant="48" id="zlv-fJ-5hm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

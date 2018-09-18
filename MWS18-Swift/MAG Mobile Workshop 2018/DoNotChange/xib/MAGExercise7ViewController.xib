@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MAGExercise7ViewController" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+            <connections>
+                <outlet property="messageTextField" destination="pX0-VR-19D" id="F4g-OC-wdg"/>
+                <outlet property="resultTextView" destination="pJg-pH-l2U" id="eGf-xe-CbA"/>
+                <outlet property="usernameTextField" destination="tvm-0h-hXI" id="NFy-4V-Ie0"/>
+                <outlet property="view" destination="PEC-bB-AfD" id="wkr-Ys-nDa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="PEC-bB-AfD">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pJg-pH-l2U" customClass="MAGTextView" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="321" width="323" height="256"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pX0-VR-19D" customClass="MAGTextField" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="81" width="323" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="VLg-Lq-vay"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvm-0h-hXI" customClass="MAGTextField" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="145" width="166" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="URv-Z1-RhZ"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQI-Qe-oEk" customClass="MAGButton" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="215" y="148" width="134" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="134" id="381-aU-yMI"/>
+                        <constraint firstAttribute="height" constant="38" id="aSu-Xm-RUx"/>
+                    </constraints>
+                    <state key="normal" title="Send Message"/>
+                    <connections>
+                        <action selector="performSendMessageWithSender:" destination="-1" eventType="touchUpInside" id="BYK-Ob-cu0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDS-C1-5fH" customClass="MAGButton" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="242" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="ehc-mO-vss"/>
+                    </constraints>
+                    <state key="normal" title="Start listening to my message"/>
+                    <connections>
+                        <action selector="performStartListeningToMyMessageWithSender:" destination="-1" eventType="touchUpInside" id="uhi-Fr-qhg"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpW-Xc-j6L">
+                    <rect key="frame" x="175" y="211" width="24" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="MdD-j5-ZlH"/>
+                        <constraint firstAttribute="width" constant="24" id="Yko-C7-gr6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayr-2S-Th0">
+                    <rect key="frame" x="26" y="220" width="135" height="2"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="0M9-Dc-Ujq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTx-PI-tVp">
+                    <rect key="frame" x="215" y="220" width="135" height="2"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="9c2-w1-kBJ"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgo-3d-wUo" customClass="MAGButton" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="603" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="OfP-L8-CQl"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="Wff-pa-lOj"/>
+                    </constraints>
+                    <state key="normal" title="Clear All Values"/>
+                    <connections>
+                        <action selector="clearAllValuesWithSender:" destination="-1" eventType="touchUpInside" id="GkQ-D6-LC6"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#7: Messaging" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXX-ac-1hc">
+                    <rect key="frame" x="26" y="30" width="323" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EpW-Xc-j6L" firstAttribute="top" secondItem="tvm-0h-hXI" secondAttribute="bottom" constant="25" id="1vO-c9-TAa"/>
+                <constraint firstItem="yDS-C1-5fH" firstAttribute="leading" secondItem="6Nk-Dr-KcL" secondAttribute="leading" constant="26" id="6Oc-0Y-Jg3"/>
+                <constraint firstItem="tvm-0h-hXI" firstAttribute="leading" secondItem="6Nk-Dr-KcL" secondAttribute="leading" constant="26" id="8TK-NY-Mi6"/>
+                <constraint firstAttribute="trailing" secondItem="yTx-PI-tVp" secondAttribute="trailing" constant="25" id="8pB-w8-7eL"/>
+                <constraint firstItem="6Nk-Dr-KcL" firstAttribute="trailing" secondItem="HQI-Qe-oEk" secondAttribute="trailing" constant="26" id="8sr-Qn-oXG"/>
+                <constraint firstItem="6Nk-Dr-KcL" firstAttribute="trailing" secondItem="pX0-VR-19D" secondAttribute="trailing" constant="26" id="9Oa-jn-xao"/>
+                <constraint firstItem="EpW-Xc-j6L" firstAttribute="centerX" secondItem="6Nk-Dr-KcL" secondAttribute="centerX" id="9nD-wt-uMb"/>
+                <constraint firstItem="pX0-VR-19D" firstAttribute="top" secondItem="KXX-ac-1hc" secondAttribute="bottom" constant="30" id="F2E-yI-esx"/>
+                <constraint firstItem="yDS-C1-5fH" firstAttribute="top" secondItem="tvm-0h-hXI" secondAttribute="bottom" constant="56" id="FrX-Ku-a0t"/>
+                <constraint firstItem="HQI-Qe-oEk" firstAttribute="leading" secondItem="tvm-0h-hXI" secondAttribute="trailing" constant="23" id="Omu-71-Jg6"/>
+                <constraint firstItem="tvm-0h-hXI" firstAttribute="top" secondItem="pX0-VR-19D" secondAttribute="bottom" constant="23" id="QEC-xk-Ocx"/>
+                <constraint firstItem="6Nk-Dr-KcL" firstAttribute="trailing" secondItem="yDS-C1-5fH" secondAttribute="trailing" constant="26" id="TB1-uI-cgi"/>
+                <constraint firstItem="pJg-pH-l2U" firstAttribute="top" secondItem="HQI-Qe-oEk" secondAttribute="bottom" constant="135" id="VsY-R2-4Zb"/>
+                <constraint firstItem="Vgo-3d-wUo" firstAttribute="top" secondItem="pJg-pH-l2U" secondAttribute="bottom" constant="26" id="bcl-fK-2nU"/>
+                <constraint firstItem="6Nk-Dr-KcL" firstAttribute="trailing" secondItem="Vgo-3d-wUo" secondAttribute="trailing" constant="26" id="cG7-fN-LYn"/>
+                <constraint firstItem="pX0-VR-19D" firstAttribute="leading" secondItem="6Nk-Dr-KcL" secondAttribute="leading" constant="26" id="es9-if-NUk"/>
+                <constraint firstItem="yTx-PI-tVp" firstAttribute="top" secondItem="HQI-Qe-oEk" secondAttribute="bottom" constant="34" id="g8g-6b-4C3"/>
+                <constraint firstItem="6Nk-Dr-KcL" firstAttribute="bottom" secondItem="Vgo-3d-wUo" secondAttribute="bottom" constant="26" id="jTf-68-v6n"/>
+                <constraint firstItem="Vgo-3d-wUo" firstAttribute="leading" secondItem="6Nk-Dr-KcL" secondAttribute="leading" constant="26" id="jf4-8V-a2x"/>
+                <constraint firstItem="ayr-2S-Th0" firstAttribute="top" secondItem="tvm-0h-hXI" secondAttribute="bottom" constant="34" id="mvE-5m-i9w"/>
+                <constraint firstItem="KXX-ac-1hc" firstAttribute="top" secondItem="6Nk-Dr-KcL" secondAttribute="top" constant="10" id="mzk-CX-PVa"/>
+                <constraint firstItem="EpW-Xc-j6L" firstAttribute="leading" secondItem="ayr-2S-Th0" secondAttribute="trailing" constant="14" id="obK-Ri-DxV"/>
+                <constraint firstItem="pJg-pH-l2U" firstAttribute="leading" secondItem="6Nk-Dr-KcL" secondAttribute="leading" constant="26" id="pdi-10-tQf"/>
+                <constraint firstItem="KXX-ac-1hc" firstAttribute="leading" secondItem="6Nk-Dr-KcL" secondAttribute="leading" constant="26" id="puh-KA-qj6"/>
+                <constraint firstItem="yTx-PI-tVp" firstAttribute="leading" secondItem="EpW-Xc-j6L" secondAttribute="trailing" constant="16" id="qXq-Jn-grW"/>
+                <constraint firstItem="ayr-2S-Th0" firstAttribute="leading" secondItem="PEC-bB-AfD" secondAttribute="leading" constant="26" id="srZ-M3-Lp9"/>
+                <constraint firstItem="6Nk-Dr-KcL" firstAttribute="trailing" secondItem="KXX-ac-1hc" secondAttribute="trailing" constant="26" id="u0d-Pk-zdx"/>
+                <constraint firstItem="6Nk-Dr-KcL" firstAttribute="trailing" secondItem="pJg-pH-l2U" secondAttribute="trailing" constant="26" id="xzH-rR-Rsm"/>
+                <constraint firstItem="HQI-Qe-oEk" firstAttribute="top" secondItem="pX0-VR-19D" secondAttribute="bottom" constant="26" id="yF9-5b-95q"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="6Nk-Dr-KcL"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

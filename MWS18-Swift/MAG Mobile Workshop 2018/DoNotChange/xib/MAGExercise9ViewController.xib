@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MAGExercise9ViewController" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+            <connections>
+                <outlet property="resultTextView" destination="kMi-8L-QjZ" id="DzI-Lr-zWx"/>
+                <outlet property="urlTextField" destination="S9b-f6-M9r" id="jXq-XE-LVU"/>
+                <outlet property="view" destination="QHr-Q8-xaW" id="eVh-c6-pkT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="QHr-Q8-xaW">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2U-vh-HvF" customClass="MAGButton" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="165" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="Kyl-3A-lbo"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="jOc-SS-lyE"/>
+                    </constraints>
+                    <state key="normal" title="Invoke Public API"/>
+                    <connections>
+                        <action selector="performInvokePublicAPIWithSender:" destination="-1" eventType="touchUpInside" id="aZl-GR-XdL"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kMi-8L-QjZ" customClass="MAGTextView" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="267" width="323" height="310"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S9b-f6-M9r" customClass="MAGTextField" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="96" width="323" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="wES-vr-dJD"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWL-Lc-oGt" customClass="MAGButton" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="603" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="efE-oE-Td9"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="iVU-lL-DHd"/>
+                    </constraints>
+                    <state key="normal" title="Clear All Values"/>
+                    <connections>
+                        <action selector="clearAllValuesWithSender:" destination="-1" eventType="touchUpInside" id="MTz-Xf-C1b"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#9: Consume a Public API" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6py-QN-1Fr">
+                    <rect key="frame" x="26" y="30" width="323" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6py-QN-1Fr" firstAttribute="top" secondItem="1yt-k0-3V7" secondAttribute="top" constant="10" id="7qk-DI-HDi"/>
+                <constraint firstItem="1yt-k0-3V7" firstAttribute="trailing" secondItem="kMi-8L-QjZ" secondAttribute="trailing" constant="26" id="Esf-NL-riG"/>
+                <constraint firstItem="kMi-8L-QjZ" firstAttribute="leading" secondItem="1yt-k0-3V7" secondAttribute="leading" constant="26" id="J5s-3u-4No"/>
+                <constraint firstItem="1yt-k0-3V7" firstAttribute="trailing" secondItem="SWL-Lc-oGt" secondAttribute="trailing" constant="26" id="JBI-ZA-a4h"/>
+                <constraint firstItem="kMi-8L-QjZ" firstAttribute="top" secondItem="w2U-vh-HvF" secondAttribute="bottom" constant="64" id="MBg-hC-Qow"/>
+                <constraint firstItem="S9b-f6-M9r" firstAttribute="leading" secondItem="1yt-k0-3V7" secondAttribute="leading" constant="26" id="PVA-ER-af5"/>
+                <constraint firstItem="1yt-k0-3V7" firstAttribute="bottom" secondItem="SWL-Lc-oGt" secondAttribute="bottom" constant="26" id="VbK-9d-M2a"/>
+                <constraint firstItem="1yt-k0-3V7" firstAttribute="trailing" secondItem="S9b-f6-M9r" secondAttribute="trailing" constant="26" id="aJo-RA-oLS"/>
+                <constraint firstItem="6py-QN-1Fr" firstAttribute="leading" secondItem="1yt-k0-3V7" secondAttribute="leading" constant="26" id="b3Z-om-VKg"/>
+                <constraint firstItem="SWL-Lc-oGt" firstAttribute="top" secondItem="kMi-8L-QjZ" secondAttribute="bottom" constant="26" id="boO-gj-ozJ"/>
+                <constraint firstItem="S9b-f6-M9r" firstAttribute="top" secondItem="6py-QN-1Fr" secondAttribute="bottom" constant="45" id="cLY-Vu-8q1"/>
+                <constraint firstItem="1yt-k0-3V7" firstAttribute="trailing" secondItem="w2U-vh-HvF" secondAttribute="trailing" constant="26" id="eQR-Ff-zDZ"/>
+                <constraint firstItem="1yt-k0-3V7" firstAttribute="trailing" secondItem="6py-QN-1Fr" secondAttribute="trailing" constant="26" id="eb2-Ve-iTm"/>
+                <constraint firstItem="SWL-Lc-oGt" firstAttribute="leading" secondItem="1yt-k0-3V7" secondAttribute="leading" constant="26" id="iE1-oa-KkO"/>
+                <constraint firstItem="w2U-vh-HvF" firstAttribute="top" secondItem="S9b-f6-M9r" secondAttribute="bottom" constant="28" id="k9f-YZ-glC"/>
+                <constraint firstItem="w2U-vh-HvF" firstAttribute="leading" secondItem="1yt-k0-3V7" secondAttribute="leading" constant="26" id="z2u-Km-we2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="1yt-k0-3V7"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

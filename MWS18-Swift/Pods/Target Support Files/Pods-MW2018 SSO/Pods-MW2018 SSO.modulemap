@@ -1,0 +1,6 @@
+framework module Pods_MW2018_SSO {
+  umbrella header "Pods-MW2018 SSO-umbrella.h"
+
+  export *
+  module * { export * }
+}

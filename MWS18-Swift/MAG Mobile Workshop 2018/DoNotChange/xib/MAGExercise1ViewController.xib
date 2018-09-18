@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MAGExercise1ViewController" customModule="MW2018" customModuleProvider="target">
+            <connections>
+                <outlet property="passwordTextField" destination="XVm-Fy-jOr" id="Or4-5V-fcz"/>
+                <outlet property="resultTextView" destination="CGI-Ka-cPb" id="zT6-Pu-oJb"/>
+                <outlet property="usernameTextField" destination="79b-G2-pdA" id="vlK-LU-7yp"/>
+                <outlet property="view" destination="1ke-i6-vXo" id="hW6-Ap-u7M"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1ke-i6-vXo">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="79b-G2-pdA" customClass="MAGTextField" customModule="MW2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="71" width="139" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="PRM-kE-11u"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XVm-Fy-jOr" customClass="MAGTextField" customModule="MW2018" customModuleProvider="target">
+                    <rect key="frame" x="210" y="71" width="139" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="mJT-IF-4f4"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGT-K6-53O" customClass="MAGButton" customModule="MW2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="139" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="Zez-HV-wgW"/>
+                    </constraints>
+                    <state key="normal" title="Login"/>
+                    <connections>
+                        <action selector="performLoginWithSender:" destination="-1" eventType="touchUpInside" id="RcE-QN-212"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQO-sU-gCz" customClass="MAGButton" customModule="MW2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="194" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="6Bf-uH-v2o"/>
+                    </constraints>
+                    <state key="normal" title="Logout"/>
+                    <connections>
+                        <action selector="performLogoutWithSender:" destination="-1" eventType="touchUpInside" id="IGI-Qy-81E"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CGI-Ka-cPb" customClass="MAGTextView" customModule="MW2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="257" width="323" height="320"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMe-BE-Ja9" customClass="MAGButton" customModule="MW2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="603" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="Hhy-5A-GeG"/>
+                        <constraint firstAttribute="height" constant="38" id="xN5-yD-t5G"/>
+                    </constraints>
+                    <state key="normal" title="Clear All Values"/>
+                    <connections>
+                        <action selector="clearAllValuesWithSender:" destination="-1" eventType="touchUpInside" id="Nn9-NH-yYB"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#1: Login with username and password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IX-mH-SA6">
+                    <rect key="frame" x="26" y="30" width="323" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6IX-mH-SA6" firstAttribute="leading" secondItem="xiL-HJ-Nwh" secondAttribute="leading" constant="26" id="1hd-Ta-9zO"/>
+                <constraint firstItem="zGT-K6-53O" firstAttribute="leading" secondItem="xiL-HJ-Nwh" secondAttribute="leading" constant="26" id="27C-Kx-nO5"/>
+                <constraint firstItem="6IX-mH-SA6" firstAttribute="top" secondItem="xiL-HJ-Nwh" secondAttribute="top" constant="10" id="BaF-Wy-bpr"/>
+                <constraint firstItem="xiL-HJ-Nwh" firstAttribute="trailing" secondItem="79b-G2-pdA" secondAttribute="trailing" constant="210" id="J1Z-om-dC3"/>
+                <constraint firstItem="CMe-BE-Ja9" firstAttribute="leading" secondItem="xiL-HJ-Nwh" secondAttribute="leading" constant="26" id="JSL-dE-CbL"/>
+                <constraint firstItem="XVm-Fy-jOr" firstAttribute="trailing" secondItem="zGT-K6-53O" secondAttribute="trailing" id="Nch-ap-6B0"/>
+                <constraint firstItem="CMe-BE-Ja9" firstAttribute="top" secondItem="CGI-Ka-cPb" secondAttribute="bottom" constant="26" id="PIk-Vw-r37"/>
+                <constraint firstItem="CGI-Ka-cPb" firstAttribute="top" secondItem="JQO-sU-gCz" secondAttribute="bottom" constant="25" id="RYt-42-yqA"/>
+                <constraint firstItem="JQO-sU-gCz" firstAttribute="top" secondItem="zGT-K6-53O" secondAttribute="bottom" constant="17" id="WZU-Q1-lQf"/>
+                <constraint firstItem="xiL-HJ-Nwh" firstAttribute="trailing" secondItem="zGT-K6-53O" secondAttribute="trailing" constant="26" id="XDZ-gH-GEe"/>
+                <constraint firstItem="xiL-HJ-Nwh" firstAttribute="trailing" secondItem="CMe-BE-Ja9" secondAttribute="trailing" constant="26" id="Yic-3k-DOx"/>
+                <constraint firstItem="79b-G2-pdA" firstAttribute="top" secondItem="6IX-mH-SA6" secondAttribute="bottom" constant="20" id="Yxw-0F-wv8"/>
+                <constraint firstItem="XVm-Fy-jOr" firstAttribute="leading" secondItem="xiL-HJ-Nwh" secondAttribute="leading" constant="210" id="aGc-qs-f4p"/>
+                <constraint firstItem="xiL-HJ-Nwh" firstAttribute="trailing" secondItem="CGI-Ka-cPb" secondAttribute="trailing" constant="26" id="cIO-xl-WLY"/>
+                <constraint firstItem="xiL-HJ-Nwh" firstAttribute="bottom" secondItem="CMe-BE-Ja9" secondAttribute="bottom" constant="26" id="eDD-FL-bdV"/>
+                <constraint firstItem="79b-G2-pdA" firstAttribute="leading" secondItem="zGT-K6-53O" secondAttribute="leading" id="eN1-8j-HfC"/>
+                <constraint firstItem="xiL-HJ-Nwh" firstAttribute="trailing" secondItem="JQO-sU-gCz" secondAttribute="trailing" constant="26" id="jsd-gy-fO1"/>
+                <constraint firstItem="CGI-Ka-cPb" firstAttribute="leading" secondItem="xiL-HJ-Nwh" secondAttribute="leading" constant="26" id="kZi-GC-gex"/>
+                <constraint firstItem="XVm-Fy-jOr" firstAttribute="top" secondItem="6IX-mH-SA6" secondAttribute="bottom" constant="20" id="ncM-PZ-dJS"/>
+                <constraint firstItem="zGT-K6-53O" firstAttribute="top" secondItem="79b-G2-pdA" secondAttribute="bottom" constant="27" id="pyp-Id-AEe"/>
+                <constraint firstItem="xiL-HJ-Nwh" firstAttribute="trailing" secondItem="6IX-mH-SA6" secondAttribute="trailing" constant="26" id="sQX-no-a3Q"/>
+                <constraint firstItem="JQO-sU-gCz" firstAttribute="leading" secondItem="xiL-HJ-Nwh" secondAttribute="leading" constant="26" id="zUH-vH-aNf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="xiL-HJ-Nwh"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

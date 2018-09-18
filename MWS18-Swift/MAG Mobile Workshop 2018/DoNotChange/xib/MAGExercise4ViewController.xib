@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MAGExercise4ViewController" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+            <connections>
+                <outlet property="resultTextView" destination="8gp-pH-LDr" id="OVl-VH-aaC"/>
+                <outlet property="urlTextField" destination="liV-PQ-u2U" id="HH9-gJ-WCz"/>
+                <outlet property="view" destination="NEH-84-uC5" id="fJG-UB-FEe"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="NEH-84-uC5">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8F9-IV-w9g" customClass="MAGButton" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="165" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="Tl3-a2-vyO"/>
+                        <constraint firstAttribute="height" constant="38" id="fAN-VT-U5r"/>
+                    </constraints>
+                    <state key="normal" title="Invoke API with OTP"/>
+                    <connections>
+                        <action selector="performInvokeAPIWithOTPWithSender:" destination="-1" eventType="touchUpInside" id="781-9D-yIk"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8gp-pH-LDr" customClass="MAGTextView" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="267" width="323" height="310"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="liV-PQ-u2U" customClass="MAGTextField" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="96" width="323" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="r1k-wk-WQI"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evj-fX-Flg" customClass="MAGButton" customModule="MAG_Mobile_Workshop_2018" customModuleProvider="target">
+                    <rect key="frame" x="26" y="603" width="323" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="Z0W-sn-7eo"/>
+                        <constraint firstAttribute="height" constant="38" id="pex-Wa-Sqj"/>
+                    </constraints>
+                    <state key="normal" title="Clear All Values"/>
+                    <connections>
+                        <action selector="clearAllValuesWithSender:" destination="-1" eventType="touchUpInside" id="4B3-U6-BGV"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#4: Multifactor Authentication with OTP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpB-Vd-KOg">
+                    <rect key="frame" x="26" y="30" width="323" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dCk-Cr-6kM" firstAttribute="trailing" secondItem="8gp-pH-LDr" secondAttribute="trailing" constant="26" id="3Fs-Gm-dmm"/>
+                <constraint firstItem="liV-PQ-u2U" firstAttribute="top" secondItem="qpB-Vd-KOg" secondAttribute="bottom" constant="45" id="3HP-yv-CF3"/>
+                <constraint firstItem="dCk-Cr-6kM" firstAttribute="trailing" secondItem="evj-fX-Flg" secondAttribute="trailing" constant="26" id="3te-T3-16e"/>
+                <constraint firstItem="dCk-Cr-6kM" firstAttribute="trailing" secondItem="liV-PQ-u2U" secondAttribute="trailing" constant="26" id="CkP-Ie-drm"/>
+                <constraint firstItem="qpB-Vd-KOg" firstAttribute="leading" secondItem="dCk-Cr-6kM" secondAttribute="leading" constant="26" id="E9m-cc-lL7"/>
+                <constraint firstItem="evj-fX-Flg" firstAttribute="leading" secondItem="dCk-Cr-6kM" secondAttribute="leading" constant="26" id="H5J-xx-1Is"/>
+                <constraint firstItem="dCk-Cr-6kM" firstAttribute="bottom" secondItem="evj-fX-Flg" secondAttribute="bottom" constant="26" id="HnR-6R-16n"/>
+                <constraint firstItem="liV-PQ-u2U" firstAttribute="leading" secondItem="dCk-Cr-6kM" secondAttribute="leading" constant="26" id="OxR-Mg-Br5"/>
+                <constraint firstItem="8F9-IV-w9g" firstAttribute="top" secondItem="liV-PQ-u2U" secondAttribute="bottom" constant="28" id="QyE-In-kPN"/>
+                <constraint firstItem="8F9-IV-w9g" firstAttribute="leading" secondItem="dCk-Cr-6kM" secondAttribute="leading" constant="26" id="VsH-oE-XhH"/>
+                <constraint firstItem="qpB-Vd-KOg" firstAttribute="top" secondItem="dCk-Cr-6kM" secondAttribute="top" constant="10" id="XKR-hY-ucg"/>
+                <constraint firstItem="dCk-Cr-6kM" firstAttribute="trailing" secondItem="8F9-IV-w9g" secondAttribute="trailing" constant="26" id="dYE-r8-aW1"/>
+                <constraint firstItem="evj-fX-Flg" firstAttribute="top" secondItem="8gp-pH-LDr" secondAttribute="bottom" constant="26" id="lKp-SN-HSD"/>
+                <constraint firstItem="8gp-pH-LDr" firstAttribute="leading" secondItem="dCk-Cr-6kM" secondAttribute="leading" constant="26" id="sRa-5t-m9D"/>
+                <constraint firstItem="8gp-pH-LDr" firstAttribute="top" secondItem="8F9-IV-w9g" secondAttribute="bottom" constant="64" id="wF7-eo-0HV"/>
+                <constraint firstItem="dCk-Cr-6kM" firstAttribute="trailing" secondItem="qpB-Vd-KOg" secondAttribute="trailing" constant="26" id="yGc-XZ-Kbe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="dCk-Cr-6kM"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+</document>
