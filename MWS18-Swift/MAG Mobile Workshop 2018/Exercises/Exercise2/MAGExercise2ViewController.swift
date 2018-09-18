@@ -9,6 +9,7 @@
 import UIKit
 import MASFoundation
 import SVProgressHUD
+import SwiftyJSON
 
 
 class MAGExercise2ViewController: MAGBaseViewController {
@@ -38,7 +39,17 @@ class MAGExercise2ViewController: MAGBaseViewController {
             //We have data!
             SVProgressHUD.dismiss()
             print("Products response: \(response!["MASResponseInfoBodyInfoKey"]!) ")
-            self.resultTextView.text = response?.debugDescription
+            
+            //Parse JSON
+            print("Try to parse JSON...")
+            let resultJSON : JSON = JSON(response!["MASResponseInfoBodyInfoKey"]!)
+            let name = resultJSON["name"].stringValue
+            let time = resultJSON["time"].stringValue
+            let data = ("Name: \(name), Time: \(time) \n")
+            print (data)
+            self.resultTextView.text = data
+            
+            //self.resultTextView.text = response?.debugDescription
         })
     }
     
