@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MASFoundation
+import SVProgressHUD
 
 class MAGExercise2ViewController: MAGBaseViewController {
 
@@ -30,11 +32,9 @@ class MAGExercise2ViewController: MAGBaseViewController {
     @IBAction func performInvokeAPI(sender: AnyObject) {
         view.endEditing(true)
         print("Invoke API button is clicked")
+        urlTextField.placeholder = "/team7ex2"
         
-        var TODO__: AnyObject
-        //
         //  TODO: Exercise #2 - Protect an API with OAuth 2.0
-        //
         //  In here, this method gets called when the "Invoke API" button is clicked, and you want to implement API invoke through MASFoundation
         //  which will trigger user authentication through MASUI.
         //  You can invoke endpoint you created which is protected by OAuth
@@ -44,6 +44,17 @@ class MAGExercise2ViewController: MAGBaseViewController {
         //  Please refer to documentation for more details on this functionality: http://mas.ca.com/docs/ios/latest/guides/#user-login-dialog
         //  and http://mas.ca.com/docs/ios/latest/guides/#build-request-with-masrequestbuilder-and-masrequest
         //
+        
+        MAS.getFrom(urlTextField.text!, withParameters: nil, andHeaders: nil, completion: { (response, error) in
+            //We have data!
+            SVProgressHUD.dismiss()
+            
+            //print (response?.debugDescription)
+            print("Response: \(response?.debugDescription ?? "No data returned")")
+
+            
+            self.resultTextView.text = response?.debugDescription
+        })
     }
     
     @objc
