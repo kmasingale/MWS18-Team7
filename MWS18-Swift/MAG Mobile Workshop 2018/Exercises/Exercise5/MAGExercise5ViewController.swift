@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import MASFoundation
+import SVProgressHUD
+import SwiftyJSON
 
 class MAGExercise5ViewController: MAGBaseViewController {
 
@@ -21,6 +24,7 @@ class MAGExercise5ViewController: MAGBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        urlTextField.text = "/mws-team7/exercise2"
         title = "Exercise 5"
         urlTextField.placeholder = "Enter URL path or full URL of API"
     }
@@ -33,17 +37,13 @@ class MAGExercise5ViewController: MAGBaseViewController {
         view.endEditing(true)
         print("Check current user session button is clicked")
         
-        var TODO__: AnyObject
-        //
-        //  TODO: Exercise #5 - Single Sign-On Between Apps
-        //
-        //  In this exercise, with already authenticated user, you want to validate SSO.
-        //  You will need to launch another scheme of the application on the top left corner, and perform this button in the same exercise on the other app.
-        //  To validate if SSO was correctly configured, you can simply dump currently authenticated user object without performing any authentication on the other app.
-        //  Use [self updateResultTextView:] method to display the authenticated user's information
-        //
-        //  Please refer to documentation for more details on this functionality: http://mas.ca.com/docs/ios/latest/guides/#one-time-password
-        //
+        if (MASUser.current() != nil) {
+            self.resultTextView.text = "\(String(describing: MASUser.current()))"
+        }
+        else {
+            self.resultTextView.text = "User has not been Authenticated!\n \nPlease Authenticate in either APP before selecting this option."
+        }
+        
     }
     
     
@@ -52,14 +52,34 @@ class MAGExercise5ViewController: MAGBaseViewController {
         view.endEditing(true)
         print("Invoke API button is clicked")
         
-        var TODO__: AnyObject
-        //
-        //  TODO: Exercise #5 - Single Sign-On Between Apps
-        //
-        //  Another way to validate if SSO is correctly working, you can simply invoke an protected API that you created, and protected by OAuth/Mutual SSL.
-        //
-        //  Please refer to documentation for more details on this functionality: http://mas.ca.com/docs/ios/latest/guides/#build-request-with-masrequestbuilder-and-masrequest
-        //
+        MAS.getFrom(urlTextField.text!, withParameters: nil, andHeaders: nil, completion: { (response, error) in
+            
+            if (error == nil) {
+                //We have data!
+                SVProgressHUD.dismiss()
+                print("Products response: \(response!["MASResponseInfoBodyInfoKey"]!) ")
+                
+                //Parse JSON
+                print("Try to parse JSON...")
+                let resultJSON : JSON = JSON(response!["MASResponseInfoBodyInfoKey"]!)
+                let name = resultJSON["name"].stringValue
+                let time = resultJSON["time"].stringValue
+                //let message = resultJSON["message"].stringValue
+                
+                let data = ("Message: Hello from Exercise 7 \nName: \(name) \nTime: \(time)")
+                
+                print (data)
+                self.resultTextView.text = data
+                //self.resultTextView.text = "\(data) \n\(MASUser())"
+                
+                
+                //self.resultTextView.text = response?.debugDescription
+            } else {
+                print ("Error \(error!)")
+            }
+            
+        })
+        
     }
 }
 
