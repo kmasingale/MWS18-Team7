@@ -1064,7 +1064,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 232JPGPD33;
+				DEVELOPMENT_TEAM = 2GC735N888;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MAG\\ Mobile\\ Workshop\\ 2018/DoNotChange/Vendors/Material/iphoneos",
@@ -1083,9 +1083,9 @@
 					"$(PROJECT_DIR)/MAG\\ Mobile\\ Workshop\\ 2018/DoNotChange/Vendors/Material",
 				);
 				INFOPLIST_FILE = "MAG Mobile Workshop 2018/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ca.mag.MAG-Mobile-Workshop-2018";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ca.mat.mag.MAG-Mobile-Workshop-2018";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1099,7 +1099,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 232JPGPD33;
+				DEVELOPMENT_TEAM = 2GC735N888;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MAG\\ Mobile\\ Workshop\\ 2018/DoNotChange/Vendors/Material/iphoneos",
@@ -1118,9 +1118,9 @@
 					"$(PROJECT_DIR)/MAG\\ Mobile\\ Workshop\\ 2018/DoNotChange/Vendors/Material",
 				);
 				INFOPLIST_FILE = "MAG Mobile Workshop 2018/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ca.mag.MAG-Mobile-Workshop-2018";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ca.mat.mag.MAG-Mobile-Workshop-2018";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
