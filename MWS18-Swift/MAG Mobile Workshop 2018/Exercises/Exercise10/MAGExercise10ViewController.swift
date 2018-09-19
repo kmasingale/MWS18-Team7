@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import MASFoundation
+import SVProgressHUD
+import SwiftyJSON
+import MASUI
 
 class MAGExercise10ViewController: MAGBaseViewController {
 
@@ -22,7 +26,7 @@ class MAGExercise10ViewController: MAGBaseViewController {
         super.viewDidLoad()
         
         title = "Exercise 10"
-        urlTextField.placeholder = "Enter URL path or full URL of geo-fencing API"
+        urlTextField.text = "/mws-team7/exercise10"
     }
     
     
@@ -33,14 +37,32 @@ class MAGExercise10ViewController: MAGBaseViewController {
         view.endEditing(true)
         print("Invoke geo-fencing API button is clicked")
         
-        var TODO__: AnyObject
-        //
-        //  TODO: Exercise #10 - Protect an API with Geofencing
-        //
-        //  In this exercise, you want to test functionality to invoke an API that is protected by MAG's geofencing functionality
-        //
-        //  Please refer to documentation for more details on this functionality: http://mas.ca.com/docs/ios/latest/guides/#geolocation
-        //
+        MAS.getFrom(urlTextField.text!, withParameters: nil, andHeaders: nil, completion: { (response, error) in
+            
+            if (error == nil) {
+                
+                //We have data!
+                SVProgressHUD.dismiss()
+                print("Products response: \(response!["MASResponseInfoBodyInfoKey"]!) ")
+                
+                //Parse JSON
+                print("Try to parse JSON...")
+                let resultJSON : JSON = JSON(response!["MASResponseInfoBodyInfoKey"]!)
+                let name = resultJSON["name"].stringValue
+                let time = resultJSON["time"].stringValue
+                let message = resultJSON["message"].stringValue
+                
+                let data = ("Message: \(message) \nName: \(name) \nTime: \(time)")
+                print (data)
+                self.resultTextView.text = data
+                
+                //self.resultTextView.text = response?.debugDescription
+                
+            } else {
+                print ("Error \(error!)")
+            }
+        })
+        
     }
 }
 
