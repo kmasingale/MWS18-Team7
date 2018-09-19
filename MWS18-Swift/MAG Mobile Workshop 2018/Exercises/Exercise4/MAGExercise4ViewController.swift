@@ -26,7 +26,7 @@ class MAGExercise4ViewController: MAGBaseViewController {
         super.viewDidLoad()
 
         title = "Exercise 4"
-        urlTextField.text = "/mws-team7/exercise4?amount=50"
+        urlTextField.text = "/mws-team7/exercise4?amount=90"
         
         
         //
