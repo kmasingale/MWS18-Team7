@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import MASFoundation
+import SVProgressHUD
+import SwiftyJSON
+
 
 class MAGExercise3ViewController: MAGBaseViewController {
 
@@ -22,7 +26,7 @@ class MAGExercise3ViewController: MAGBaseViewController {
         super.viewDidLoad()
 
         title = "Exercise 3"
-        urlTextField.placeholder = "Enter URL path or full URL of API"
+        urlTextField.text = "/team7ex3"
     }
     
     
@@ -33,36 +37,56 @@ class MAGExercise3ViewController: MAGBaseViewController {
         view.endEditing(true)
         print("Invoke API button is clicked")
         
-        var TODO__: AnyObject
-        //
-        //  TODO: Exercise #3 - Protect an API with OAuth 2.0
-        //
-        //  In here, this method gets called when the "Invoke API" button is clicked, and you want to implement API invoke through MASFoundation
-        //  which will trigger user authentication in this time, with implicit authentication.
-        //  You can invoke endpoint you created which is protected by OAuth / Mutual SSL
-        //
-        //  Within completion block of API invoke, you may want to display the result with following code:
-        //  [self updateResultTextView:]
-        //
-        //  Please refer to documentation for more details on this functionality: http://mas.ca.com/docs/ios/latest/guides/#masgrantflowpassword
-        //  and http://mas.ca.com/docs/ios/latest/guides/#build-request-with-masrequestbuilder-and-masrequest
-        //
+        MAS.getFrom(urlTextField.text!, withParameters: nil, andHeaders: nil, completion: { (response, error) in
+            //We have data!
+            SVProgressHUD.dismiss()
+            print("Products response: \(response!["MASResponseInfoBodyInfoKey"]!) ")
+            
+            //Parse JSON
+            print("Try to parse JSON...")
+            let resultJSON : JSON = JSON(response!["MASResponseInfoBodyInfoKey"]!)
+            let name = resultJSON["name"].stringValue
+            let time = resultJSON["time"].stringValue
+            let message = resultJSON["message"].stringValue
+            
+            let data = ("Name: \(name) \nTime: \(time) \nMessage: \(message)")
+            print (data)
+            self.resultTextView.text = data
+            
+            //self.resultTextView.text = response?.debugDescription
+        })
     }
+    
     
     @objc
     @IBAction func performLogout(sender: AnyObject) {
         view.endEditing(true)
         print("Logout button is clicked")
-        
-        var TODO__: AnyObject
-        //
-        //  TODO: Exercise #3 - Protect API with OAuth 2.0 and Mutual SSL
-        //
-        //  In here, this method gets called when the "Logout" button is clicked, and you want to implement logout functionality of currently authenticated user through MASFoundation.
-        //  Within completion block of user logout, you may want to display the result with following code:
-        //  [self updateResultTextView:]
-        //  Please refer to documentation for more details on this functionality: http://mas.ca.com/docs/ios/latest/guides/#login-with-user-credentials
-        //
+
+        if (MASUser.current() != nil) {
+            if (MASUser.current()!.isAuthenticated) {
+                MASUser.current()?.logout(false, completion: { (completed, error) in    //updated logout function
+                    
+                    if (error != nil) {
+                        print("Error trying to logout the user")
+                        //Present an Alert showing the results
+                        let alertController = UIAlertController(title: "Error", message: "The user coudl not be logged out", preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alertController.addAction(defaultAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    } else {
+                        print("User logout was successful")
+                        //Present an Alert showing the results
+                        let alertController = UIAlertController(title: "User Logout", message: "The user has been logged out!", preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alertController.addAction(defaultAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                })
+            } else {
+                print ("Trying to logout but user was not authenticated")
+            }
+        }
     }
 }
 

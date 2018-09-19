@@ -23,7 +23,7 @@ class MAGExercise2ViewController: MAGBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        urlTextField.placeholder = "/team7ex2"
+        urlTextField.text = "/team7ex2"
         title = "Exercise 2"
     }
     
@@ -45,7 +45,9 @@ class MAGExercise2ViewController: MAGBaseViewController {
             let resultJSON : JSON = JSON(response!["MASResponseInfoBodyInfoKey"]!)
             let name = resultJSON["name"].stringValue
             let time = resultJSON["time"].stringValue
-            let data = ("Name: \(name), Time: \(time) \n")
+            let message = resultJSON["message"].stringValue
+            
+            let data = ("Name: \(name) \nTime: \(time) \nMessage: \(message)")
             print (data)
             self.resultTextView.text = data
             
