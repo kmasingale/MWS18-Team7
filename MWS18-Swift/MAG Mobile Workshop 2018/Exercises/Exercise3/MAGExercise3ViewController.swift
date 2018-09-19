@@ -26,7 +26,7 @@ class MAGExercise3ViewController: MAGBaseViewController {
         super.viewDidLoad()
 
         title = "Exercise 3"
-        urlTextField.text = "/team7ex3"
+        urlTextField.text = "/mws-team7/exercise3"
     }
     
     
@@ -38,22 +38,29 @@ class MAGExercise3ViewController: MAGBaseViewController {
         print("Invoke API button is clicked")
         
         MAS.getFrom(urlTextField.text!, withParameters: nil, andHeaders: nil, completion: { (response, error) in
-            //We have data!
-            SVProgressHUD.dismiss()
-            print("Products response: \(response!["MASResponseInfoBodyInfoKey"]!) ")
             
-            //Parse JSON
-            print("Try to parse JSON...")
-            let resultJSON : JSON = JSON(response!["MASResponseInfoBodyInfoKey"]!)
-            let name = resultJSON["name"].stringValue
-            let time = resultJSON["time"].stringValue
-            let message = resultJSON["message"].stringValue
-            
-            let data = ("Name: \(name) \nTime: \(time) \nMessage: \(message)")
-            print (data)
-            self.resultTextView.text = data
-            
-            //self.resultTextView.text = response?.debugDescription
+            if (error == nil) {
+                
+                //We have data!
+                SVProgressHUD.dismiss()
+                print("Products response: \(response!["MASResponseInfoBodyInfoKey"]!) ")
+                
+                //Parse JSON
+                print("Try to parse JSON...")
+                let resultJSON : JSON = JSON(response!["MASResponseInfoBodyInfoKey"]!)
+                let name = resultJSON["name"].stringValue
+                let time = resultJSON["time"].stringValue
+                let message = resultJSON["message"].stringValue
+                
+                let data = ("Message: \(message) \nName: \(name) \nTime: \(time)")
+                print (data)
+                self.resultTextView.text = data
+                
+                //self.resultTextView.text = response?.debugDescription
+                
+            } else {
+                print ("Error \(error!)")
+            }
         })
     }
     
