@@ -66,7 +66,7 @@ class MAGExercise5ViewController: MAGBaseViewController {
                 let time = resultJSON["time"].stringValue
                 //let message = resultJSON["message"].stringValue
                 
-                let data = ("Message: Hello from Exercise 7 \nName: \(name) \nTime: \(time)")
+                let data = ("Message: Hello from Exercise 5 \nName: \(name) \nTime: \(time)")
                 
                 print (data)
                 self.resultTextView.text = data
