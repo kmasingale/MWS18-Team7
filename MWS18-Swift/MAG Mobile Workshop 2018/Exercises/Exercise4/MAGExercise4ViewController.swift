@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import MASFoundation
+import SVProgressHUD
+import SwiftyJSON
+import MASUI
 
 class MAGExercise4ViewController: MAGBaseViewController {
 
@@ -22,7 +26,48 @@ class MAGExercise4ViewController: MAGBaseViewController {
         super.viewDidLoad()
 
         title = "Exercise 4"
-        urlTextField.placeholder = "Enter URL path or full URL of API"
+        urlTextField.text = "/mws-team7/exercise4?amount=50"
+        
+        
+        //
+        // Configure to handle OTP by custom UI if MASUI library is included
+        // Place this line of code in AppDelegate or in your app's initialization
+        //
+        MAS.setWillHandleAuthentication(true)
+        
+        //
+        // OTP Channel selection block is invoked when SDK needs
+        //
+        MAS.setOTPChannelSelectionBlock { (supportedOTPChannels, otpGenerationBlock) in
+            //
+            // Select the channel
+            //
+            let selectedChannel = supportedOTPChannels[0]
+            otpGenerationBlock([selectedChannel], false, { (completed, error) in
+                //
+                // Handle result of channel selection
+                //
+            })
+        }
+        
+        
+        //
+        // OTP credential block is invoked when SDK needs
+        //
+        MAS.setOTPCredentialsBlock { (otpBlock, error) in
+
+            // Create UI to retrieve OTP credential from the user
+            let otpCredentials = "...user input..."
+            
+            otpBlock(otpCredentials, false, {(completed, error) in
+                
+                //
+                // Handle result of OTP credential
+                //
+            })
+        }
+
+        
     }
 
     
@@ -33,7 +78,7 @@ class MAGExercise4ViewController: MAGBaseViewController {
         view.endEditing(true)
         print("Invoke API with OTP button is clicked")
         
-        var TODO__: AnyObject
+        //var TODO__: AnyObject
         //
         //  TODO: Exercise #4 - Multifactor Authentication with OTP
         //
@@ -48,6 +93,32 @@ class MAGExercise4ViewController: MAGBaseViewController {
         //  Please refer to documentation for more details on this functionality: http://mas.ca.com/docs/ios/latest/guides/#one-time-password
         //  and http://mas.ca.com/docs/ios/latest/guides/#build-request-with-masrequestbuilder-and-masrequest
         //
+        
+        MAS.getFrom(urlTextField.text!, withParameters: nil, andHeaders: nil, completion: { (response, error) in
+            
+            if (error == nil) {
+                
+                //We have data!
+                SVProgressHUD.dismiss()
+                print("Products response: \(response!["MASResponseInfoBodyInfoKey"]!) ")
+                
+                //Parse JSON
+                print("Try to parse JSON...")
+                let resultJSON : JSON = JSON(response!["MASResponseInfoBodyInfoKey"]!)
+                let message = resultJSON["message"].stringValue
+                let amount = resultJSON["amount"].stringValue
+                
+                let data = ("Message: \(message) \nAmount: \(amount) ")
+                print (data)
+                self.resultTextView.text = data
+                
+                //self.resultTextView.text = response?.debugDescription
+                
+            } else {
+                print ("Error \(error!)")
+            }
+        })
+        
     }
 }
 
