@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import MASFoundation
+import MASConnecta
+import MASIdentityManagement
+import MASUI
+
+
+
 
 class MAGExercise7ViewController: MAGBaseViewController {
 
@@ -17,39 +24,55 @@ class MAGExercise7ViewController: MAGBaseViewController {
     @IBOutlet weak var resultTextView: MAGTextView!
     
     
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Exercise 7"
         usernameTextField.placeholder = "Recipient's PMFKey"
         messageTextField.placeholder = "Enter the message that you want to send"
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.didReceiveMessageNotification(notification:)),
+                                               name: NSNotification.Name(rawValue: MASConnectaMessageSentNotification),
+                                               object: nil)
     }
-
     
-    // MARK: - IBAction
+    
+    @objc  func didReceiveMessageNotification(notification: NSNotification){
+        //
+        //Get the Message Object from the notification
+        //
+        weak var weakSelf = self
+        
+        DispatchQueue.main.async(execute: {() -> Void in
+            
+            let myMessage = notification.userInfo![MASConnectaMessageKey] as? MASMessage
+               weakSelf?.resultTextView.text = myMessage?.payloadTypeAsString()
+            
+        })
+        
+   }
     
     @objc
     @IBAction func performSendMessage(sender: AnyObject) {
         view.endEditing(true)
         print("Send message button is clicked")
-        
-        var TODO__: AnyObject
-        //
-        //  TODO: Exercise #7 - Messaging
-        //
-        //  In this exercise, with already authenticated user, you want to validate messaging functionality available through MASConnecta SDK.
-        //  You will need MASConnecta and MASIdentityManagement SDK for this exercise.
-        //
-        //  You will need to implement user messaging functionality with following step:
-        //
-        //  1: Using MASIdentityManagement, retrieve the MASUser object with input username field.
-        //  2: With retrieved MASUser object, use MASConnecta to send a message to that user.
-        //
-        //  Please refer to documentation for more details on this functionality: http://mas.ca.com/docs/ios/latest/guides/#messaging
-        //  and http://mas.ca.com/docs/ios/latest/guides/#manage-users
-        //
+        //var userB = MASUser()
+        //var userB = ""
+        //Authenticated users have the ability to send messages (Text, Data, Image) to a user
+        MASUser.getUserByUserName(usernameTextField.text!, completion: { (user, error) in
+            let myUser = MASUser.current()
+            let userB:MASUser = user!
+            myUser?.sendMessage((self.messageTextField.text as NSObject?)!, to: userB, completion: { (success, error) in
+                
+                
+                print("Message Sent")
+                //  print("Message Sent : \(success? "YES" : "NO")\nerror : \(error ?? "" as! Error)")
+            })
+            // your code here
+        })
     }
     
     
@@ -57,18 +80,22 @@ class MAGExercise7ViewController: MAGBaseViewController {
     @IBAction func performStartListeningToMyMessage(sender: AnyObject) {
         view.endEditing(true)
         print("Start listening to my message button is clicked")
+        let myUser = MASUser.current()!
         
-        var TODO__: AnyObject
         //
-        //  TODO: Exercise #7 - Messaging
+        //Listen to Messages sent to my User
         //
-        //  In this exercise, with already authenticated user, you want to validate messaging functionality available through MASConnecta SDK.
-        //  You will need MASConnecta and MASIdentityManagement SDK for this exercise.
-        //
-        //  You will need to implement functionality to receive/listen to your own message.
-        //
-        //  Please refer to documentation for more details on this functionality: http://mas.ca.com/docs/ios/latest/guides/#start-listening-to-messages
-        //
+        myUser.startListening(toMyMessages: {(success , error)  in
+            
+            if success {
+                
+                print("Success subscribing to myUser topic!")
+            } else {
+                
+                print(error?.localizedDescription as Any)
+            }
+        })
+        
     }
 }
 
