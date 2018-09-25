@@ -49,7 +49,17 @@ class MAGExercise7ViewController: MAGBaseViewController {
         DispatchQueue.main.async(execute: {() -> Void in
             
             let myMessage = notification.userInfo![MASConnectaMessageKey] as? MASMessage
-               weakSelf?.resultTextView.text = myMessage?.payloadTypeAsString()
+            let senderName = myMessage?.senderDisplayName
+            let sentTime = myMessage?.sentTime
+            let sentTimeString = "\(String(describing: sentTime))"
+            let sentTimeString1 = sentTimeString.dropFirst(9)
+            let localSentTime = UTCToLocal(UTCDateString: String(sentTimeString1.dropLast(7)))
+            
+            if weakSelf?.resultTextView.text == "" {
+                weakSelf?.resultTextView.text = localSentTime + "::" + senderName! + "::" + (myMessage?.payloadTypeAsString())!
+            }else {
+                weakSelf?.resultTextView.text = (weakSelf?.resultTextView.text)! + "\n" + localSentTime + "::" + senderName! + "::" + (myMessage?.payloadTypeAsString())!
+            }
             
         })
         
@@ -59,19 +69,16 @@ class MAGExercise7ViewController: MAGBaseViewController {
     @IBAction func performSendMessage(sender: AnyObject) {
         view.endEditing(true)
         print("Send message button is clicked")
-        //var userB = MASUser()
-        //var userB = ""
         //Authenticated users have the ability to send messages (Text, Data, Image) to a user
         MASUser.getUserByUserName(usernameTextField.text!, completion: { (user, error) in
             let myUser = MASUser.current()
             let userB:MASUser = user!
             myUser?.sendMessage((self.messageTextField.text as NSObject?)!, to: userB, completion: { (success, error) in
                 
-                
                 print("Message Sent")
-                //  print("Message Sent : \(success? "YES" : "NO")\nerror : \(error ?? "" as! Error)")
+                
             })
-            // your code here
+            
         })
     }
     
@@ -97,6 +104,20 @@ class MAGExercise7ViewController: MAGBaseViewController {
         })
         
     }
+}
+
+
+//Convert UTC Time to Local Time
+
+func UTCToLocal(UTCDateString: String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" //Input Format
+    dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+    let UTCDate = dateFormatter.date(from: UTCDateString)
+    dateFormatter.dateFormat = "yyyy-MMM-dd hh:mm:ss" // Output Format
+    dateFormatter.timeZone = TimeZone.current
+    let UTCToCurrentFormat = dateFormatter.string(from: UTCDate!)
+    return UTCToCurrentFormat
 }
 
 
