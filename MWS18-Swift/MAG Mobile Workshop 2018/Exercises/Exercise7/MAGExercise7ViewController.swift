@@ -35,7 +35,7 @@ class MAGExercise7ViewController: MAGBaseViewController {
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.didReceiveMessageNotification(notification:)),
-                                               name: NSNotification.Name(rawValue: MASConnectaMessageSentNotification),
+                                               name: NSNotification.Name(rawValue: MASConnectaMessageReceivedNotification),
                                                object: nil)
     }
     
