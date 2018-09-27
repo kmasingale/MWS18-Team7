@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3299853721519E2100BE5EAA /* msso_config_class.json in Resources */ = {isa = PBXBuildFile; fileRef = 3299853621519E2100BE5EAA /* msso_config_class.json */; };
-		3299853821519E2100BE5EAA /* msso_config_class.json in Resources */ = {isa = PBXBuildFile; fileRef = 3299853621519E2100BE5EAA /* msso_config_class.json */; };
-		3299856021596C5A00BE5EAA /* msso_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 3299855F21596C5A00BE5EAA /* msso_config.json */; };
-		3299856121596C5A00BE5EAA /* msso_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 3299855F21596C5A00BE5EAA /* msso_config.json */; };
+		326493A5215BE0D1007AF52C /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326493A4215BE0D1007AF52C /* QRScannerViewController.swift */; };
+		326493A6215BE0D1007AF52C /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326493A4215BE0D1007AF52C /* QRScannerViewController.swift */; };
+		3299853721519E2100BE5EAA /* msso_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 3299853621519E2100BE5EAA /* msso_config.json */; };
+		3299853821519E2100BE5EAA /* msso_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 3299853621519E2100BE5EAA /* msso_config.json */; };
+		3299856021596C5A00BE5EAA /* msso_config_home.json in Resources */ = {isa = PBXBuildFile; fileRef = 3299855F21596C5A00BE5EAA /* msso_config_home.json */; };
+		3299856121596C5A00BE5EAA /* msso_config_home.json in Resources */ = {isa = PBXBuildFile; fileRef = 3299855F21596C5A00BE5EAA /* msso_config_home.json */; };
 		5CB89836DB894E15CF54C877 /* Pods_MW2018_SSO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3F7152ED9860010EC6C404 /* Pods_MW2018_SSO.framework */; };
 		CB0A9BD621225B6B00AB4199 /* MAGSideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0A9BD521225B6B00AB4199 /* MAGSideMenuTableViewController.swift */; };
 		CB0A9BD821225BD800AB4199 /* MAGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0A9BD721225BD800AB4199 /* MAGNavigationController.swift */; };
@@ -170,10 +172,11 @@
 /* Begin PBXFileReference section */
 		27E052620BA3C6A05A8AE582 /* Pods_MW2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MW2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29348C49B0B0F8EAA0F204E7 /* Pods-MW2018 SSO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MW2018 SSO.release.xcconfig"; path = "Pods/Target Support Files/Pods-MW2018 SSO/Pods-MW2018 SSO.release.xcconfig"; sourceTree = "<group>"; };
-		3299853621519E2100BE5EAA /* msso_config_class.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = msso_config_class.json; sourceTree = "<group>"; };
+		326493A4215BE0D1007AF52C /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		3299853621519E2100BE5EAA /* msso_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = msso_config.json; sourceTree = "<group>"; };
 		32998548215204A700BE5EAA /* MW2018 SSO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MW2018 SSO.entitlements"; sourceTree = "<group>"; };
 		32998549215204C000BE5EAA /* MW2018.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MW2018.entitlements; sourceTree = "<group>"; };
-		3299855F21596C5A00BE5EAA /* msso_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = msso_config.json; sourceTree = "<group>"; };
+		3299855F21596C5A00BE5EAA /* msso_config_home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = msso_config_home.json; sourceTree = "<group>"; };
 		336ABF1CDB0941B00CA3FA78 /* Pods-MW2018 SSO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MW2018 SSO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MW2018 SSO/Pods-MW2018 SSO.debug.xcconfig"; sourceTree = "<group>"; };
 		86AE9EFC68EB1C037573EDDC /* Pods-MW2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MW2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MW2018/Pods-MW2018.debug.xcconfig"; sourceTree = "<group>"; };
 		CB0A9BCC21225A6000AB4199 /* Material.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Material.xcodeproj; path = "Material/Material-2.16.4/Material.xcodeproj"; sourceTree = "<group>"; };
@@ -353,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				CB4D20BE2123697E00067852 /* MAGExercise8ViewController.swift */,
+				326493A4215BE0D1007AF52C /* QRScannerViewController.swift */,
 			);
 			path = Exercise8;
 			sourceTree = "<group>";
@@ -389,8 +393,8 @@
 			children = (
 				32998549215204C000BE5EAA /* MW2018.entitlements */,
 				32998548215204A700BE5EAA /* MW2018 SSO.entitlements */,
-				3299853621519E2100BE5EAA /* msso_config_class.json */,
-				3299855F21596C5A00BE5EAA /* msso_config.json */,
+				3299853621519E2100BE5EAA /* msso_config.json */,
+				3299855F21596C5A00BE5EAA /* msso_config_home.json */,
 				CBAD969B21224CF00080409D /* MAG Mobile Workshop 2018 */,
 				CBAD969A21224CF00080409D /* Products */,
 				9C406611936342D375FE088B /* Pods */,
@@ -645,7 +649,7 @@
 				CB591ED92124976300BCBE87 /* MAGExercise10ViewController.xib in Resources */,
 				CB591EDA2124976300BCBE87 /* MAGExercise8ViewController.xib in Resources */,
 				CB591EDB2124976300BCBE87 /* MAGExercise1ViewController.xib in Resources */,
-				3299853821519E2100BE5EAA /* msso_config_class.json in Resources */,
+				3299853821519E2100BE5EAA /* msso_config.json in Resources */,
 				CB591EDC2124976300BCBE87 /* MAGExercise4ViewController.xib in Resources */,
 				CB591EDD2124976300BCBE87 /* MAGExercise5ViewController.xib in Resources */,
 				CB591EDE2124976300BCBE87 /* MAGExercise3ViewController.xib in Resources */,
@@ -656,7 +660,7 @@
 				CB4D21442123C59600067852 /* Assets.xcassets in Resources */,
 				CB4D21462123C59600067852 /* ca_logo.png in Resources */,
 				CB4D21482123C59600067852 /* ic_menu_white_3x.png in Resources */,
-				3299856121596C5A00BE5EAA /* msso_config.json in Resources */,
+				3299856121596C5A00BE5EAA /* msso_config_home.json in Resources */,
 				CB591ED82124974900BCBE87 /* MAGExercise9ViewController.xib in Resources */,
 				CB4D214D2123C59600067852 /* LaunchScreen.storyboard in Resources */,
 				CB4D214F2123C59600067852 /* ic_menu_white.png in Resources */,
@@ -675,7 +679,7 @@
 				CB591ED02124973900BCBE87 /* MAGExercise5ViewController.xib in Resources */,
 				CBAD97B121224E3F0080409D /* Main.storyboard in Resources */,
 				CBAD97AF21224E3F0080409D /* Assets.xcassets in Resources */,
-				3299856021596C5A00BE5EAA /* msso_config.json in Resources */,
+				3299856021596C5A00BE5EAA /* msso_config_home.json in Resources */,
 				CB591ECE2124973900BCBE87 /* MAGExercise1ViewController.xib in Resources */,
 				CB591ECF2124973900BCBE87 /* MAGExercise4ViewController.xib in Resources */,
 				CB591ED32124973900BCBE87 /* MAGExercise2ViewController.xib in Resources */,
@@ -683,7 +687,7 @@
 				CB591ECD2124973900BCBE87 /* MAGExercise8ViewController.xib in Resources */,
 				CB591ECC2124973900BCBE87 /* MAGExercise10ViewController.xib in Resources */,
 				CB591ED12124973900BCBE87 /* MAGExercise3ViewController.xib in Resources */,
-				3299853721519E2100BE5EAA /* msso_config_class.json in Resources */,
+				3299853721519E2100BE5EAA /* msso_config.json in Resources */,
 				CBAD97AE21224E3F0080409D /* ic_menu_white_3x.png in Resources */,
 				CBAD97B021224E3F0080409D /* LaunchScreen.storyboard in Resources */,
 				CBAD97AD21224E3F0080409D /* ic_menu_white.png in Resources */,
@@ -809,6 +813,7 @@
 				CB4D21302123C59600067852 /* MAGExercise3ViewController.swift in Sources */,
 				CB4D21312123C59600067852 /* MAGExercise6ViewController.swift in Sources */,
 				CB4D21322123C59600067852 /* MAGExercise5ViewController.swift in Sources */,
+				326493A6215BE0D1007AF52C /* QRScannerViewController.swift in Sources */,
 				CB4D21332123C59600067852 /* MAGExercise7ViewController.swift in Sources */,
 				CB4D21342123C59600067852 /* MAGToolbarController.swift in Sources */,
 				CB4D21362123C59600067852 /* MAGTextView.swift in Sources */,
@@ -837,6 +842,7 @@
 				CB4D20AC2123694200067852 /* MAGExercise3ViewController.swift in Sources */,
 				CB4D20B82123696500067852 /* MAGExercise6ViewController.swift in Sources */,
 				CB4D20B42123695A00067852 /* MAGExercise5ViewController.swift in Sources */,
+				326493A5215BE0D1007AF52C /* QRScannerViewController.swift in Sources */,
 				CB4D20BC2123697200067852 /* MAGExercise7ViewController.swift in Sources */,
 				CB0A9BE721225F7800AB4199 /* MAGToolbarController.swift in Sources */,
 				CB4D21212123B77D00067852 /* MAGTextView.swift in Sources */,
