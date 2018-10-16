@@ -38,6 +38,14 @@ class MAGMainViewController: MAGBaseViewController {
                 print (error!)
             }
         }
+        
+         if (MASDevice.current()!.isRegistered) {
+             MASDevice.current()!.deregister(completion:nil)
+             print ("Device was Deregistered from the Server")
+         } else {
+            MASDevice.current()?.resetLocally()
+            print ("Device Reset Locally was Successful")
+             }
     }
 }
 

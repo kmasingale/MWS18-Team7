@@ -13,6 +13,8 @@
 		3299853821519E2100BE5EAA /* msso_config_class.json in Resources */ = {isa = PBXBuildFile; fileRef = 3299853621519E2100BE5EAA /* msso_config_class.json */; };
 		3299856021596C5A00BE5EAA /* msso_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 3299855F21596C5A00BE5EAA /* msso_config.json */; };
 		3299856121596C5A00BE5EAA /* msso_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 3299855F21596C5A00BE5EAA /* msso_config.json */; };
+		32BCAEFB21768C35008CFCE8 /* Motion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BCAEFA21768C35008CFCE8 /* Motion.framework */; };
+		32BCAEFC21768C35008CFCE8 /* Motion.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 32BCAEFA21768C35008CFCE8 /* Motion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5CB89836DB894E15CF54C877 /* Pods_MW2018_SSO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3F7152ED9860010EC6C404 /* Pods_MW2018_SSO.framework */; };
 		CB0A9BD621225B6B00AB4199 /* MAGSideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0A9BD521225B6B00AB4199 /* MAGSideMenuTableViewController.swift */; };
 		CB0A9BD821225BD800AB4199 /* MAGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0A9BD721225BD800AB4199 /* MAGNavigationController.swift */; };
@@ -65,7 +67,6 @@
 		CB4D21502123C59600067852 /* ic_menu_white_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBAD973221224E3F0080409D /* ic_menu_white_2x.png */; };
 		CB4D21522123C59600067852 /* Material.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB0A9BD221225A6000AB4199 /* Material.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CB4D21592123C5D200067852 /* InfoSSO.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB4D21582123C5D200067852 /* InfoSSO.plist */; };
-		CB4D215B2123C85500067852 /* Motion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4D215A2123C85400067852 /* Motion.framework */; };
 		CB4D215C2123C85500067852 /* Motion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4D215A2123C85400067852 /* Motion.framework */; };
 		CB591ECB2124973900BCBE87 /* MAGExercise9ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB591EC12124973900BCBE87 /* MAGExercise9ViewController.xib */; };
 		CB591ECC2124973900BCBE87 /* MAGExercise10ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB591EC22124973900BCBE87 /* MAGExercise10ViewController.xib */; };
@@ -89,8 +90,6 @@
 		CB591EDF2124976300BCBE87 /* MAGExercise6ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB591EC82124973900BCBE87 /* MAGExercise6ViewController.xib */; };
 		CB591EE02124976300BCBE87 /* MAGExercise2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB591EC92124973900BCBE87 /* MAGExercise2ViewController.xib */; };
 		CB591EE12124976300BCBE87 /* MAGExercise7ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB591ECA2124973900BCBE87 /* MAGExercise7ViewController.xib */; };
-		CB591F812124F77B00BCBE87 /* Motion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4D215A2123C85400067852 /* Motion.framework */; };
-		CB591F822124F77B00BCBE87 /* Motion.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB4D215A2123C85400067852 /* Motion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CB591F832124F78200BCBE87 /* Motion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4D215A2123C85400067852 /* Motion.framework */; };
 		CB591F842124F78200BCBE87 /* Motion.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB4D215A2123C85400067852 /* Motion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CBAD969D21224CF00080409D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAD969C21224CF00080409D /* AppDelegate.swift */; };
@@ -161,7 +160,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CB591F822124F77B00BCBE87 /* Motion.framework in Embed Frameworks */,
+				32BCAEFC21768C35008CFCE8 /* Motion.framework in Embed Frameworks */,
 				CB0A9BDC21225C8700AB4199 /* Material.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -177,6 +176,7 @@
 		32998548215204A700BE5EAA /* MW2018 SSO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MW2018 SSO.entitlements"; sourceTree = "<group>"; };
 		32998549215204C000BE5EAA /* MW2018.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MW2018.entitlements; sourceTree = "<group>"; };
 		3299855F21596C5A00BE5EAA /* msso_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = msso_config.json; sourceTree = "<group>"; };
+		32BCAEFA21768C35008CFCE8 /* Motion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Motion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		336ABF1CDB0941B00CA3FA78 /* Pods-MW2018 SSO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MW2018 SSO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MW2018 SSO/Pods-MW2018 SSO.debug.xcconfig"; sourceTree = "<group>"; };
 		86AE9EFC68EB1C037573EDDC /* Pods-MW2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MW2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MW2018/Pods-MW2018.debug.xcconfig"; sourceTree = "<group>"; };
 		CB0A9BCC21225A6000AB4199 /* Material.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Material.xcodeproj; path = "Material/Material-2.16.4/Material.xcodeproj"; sourceTree = "<group>"; };
@@ -243,10 +243,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB4D215B2123C85500067852 /* Motion.framework in Frameworks */,
 				CB0A9BDB21225C8700AB4199 /* Material.framework in Frameworks */,
-				CB591F812124F77B00BCBE87 /* Motion.framework in Frameworks */,
 				E0E1A892F8D526F036F6BAF7 /* Pods_MW2018.framework in Frameworks */,
+				32BCAEFB21768C35008CFCE8 /* Motion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +390,7 @@
 		CBAD969021224CF00080409D = {
 			isa = PBXGroup;
 			children = (
+				32BCAEFA21768C35008CFCE8 /* Motion.framework */,
 				32998549215204C000BE5EAA /* MW2018.entitlements */,
 				32998548215204A700BE5EAA /* MW2018 SSO.entitlements */,
 				3299853621519E2100BE5EAA /* msso_config_class.json */,
