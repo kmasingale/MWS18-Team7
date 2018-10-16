@@ -41,10 +41,11 @@ class MAGMainViewController: MAGBaseViewController {
         
          if (MASDevice.current()!.isRegistered) {
              MASDevice.current()!.deregister(completion:nil)
-             print ("Device was Deregistered from the Server")
+             MASDevice.current()?.resetLocally()
+             print ("Device was Deregistered from the Server and Reset Locally.")
          } else {
             MASDevice.current()?.resetLocally()
-            print ("Device Reset Locally was Successful")
+            print ("Device was not Registered on the Server but was Reset Locally to avoid any Conflicts.")
              }
     }
 }
